@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.w{
+  width: 650px;
+  padding: 20px;
+  margin: 0 auto;
+}
+.log{
+  margin: 0 auto;
+}
+.d{
+  margin: 0 auto;
+}
+.sh{
+  width: 650px;
+  margin: 0 auto;
+  margin-top: 20px;
+  background-color: aqua;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+}
+.sh .h{
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.link{
+  cursor: pointer;
+}
+.notes{
+  padding: 7px;
+  border: 1px solid grey;
+  outline: none;
+  border-radius: 10px;
+  height: 200px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  resize: none;
+  font-family: 'Courier New', Courier, monospace;
+}
+.add{
+  padding: 10px 20px;
+  background-color: rgb(67, 116, 38);
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+.del{
+
+  padding: 10px 20px;
+  background-color: rgb(214, 95, 95);
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+.buttons{
+  flex-direction: column;
+}
+
+.notess{
+  border: 0;
+  outline: none;
+  border-radius: 10px;
+  height: 200px;
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.15);
+  resize: none;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.notes::-webkit-scrollbar{
+  background: rgba(0, 0, 0, 0.15);
+  width: 10px;
+  border-radius: 7px;
+}
+
+.notes::-webkit-scrollbar-track{
+  background: rgba(37, 43, 38, 0.15);
+  width: 1opx;
+}
+
+.notes::-webkit-scrollbar-thumb{
+  background: rgba(64, 160, 77, 0.658);
+  width: 10px;
+  border-radius: 10px;
+}
+.preview{
+  margin-left: 300px;
+}
+.preview h1{
+  font-size: 15px;
+  font-weight: 300;
+}
+
+.notess::-webkit-scrollbar{
+  background: rgba(0, 0, 0, 0.15);
+  width: 10px;
+  border-radius: 7px;
+}
+
+.notess::-webkit-scrollbar-track{
+  background: rgba(37, 43, 38, 0.15);
+  width: 1opx;
+}
+
+.notess::-webkit-scrollbar-thumb{
+  background: rgba(64, 160, 77, 0.658);
+  width: 10px;
+  border-radius: 10px;
+}
+
+.share{
+
+  padding: 10px 20px;
+  background-color: rgba(49, 85, 165, 0.63);
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-left: 10px;
+}
