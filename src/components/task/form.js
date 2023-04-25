@@ -27,7 +27,6 @@ const handleClick=()=>{
             <span className='input-group-text'><button className='btn btn-secondary' onClick={handleClick}>Add Task</button></span>
           </div>
         </form>
-      
         </>
   )
 }

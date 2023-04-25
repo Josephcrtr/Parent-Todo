@@ -1,9 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Task from './form'
 import List from './List'
 const Parent = () => {
+
+    const getStorage=()=>{
+      let list = localStorage.getItem('todos')
+      if(list){
+        return(list = JSON.parse(localStorage.getItem('todos')))
+      }else{
+        return []
+      }
+    }
+
   const [task, setTask] = useState('')
-  const [result, setResult] = useState([])
+  const [result, setResult] = useState(getStorage(),[])
   
   const addTodo=(todo)=>{
    setResult([...result,{msg:todo,id:Math.floor(Math.random()*10000),isDeleted: false,completed: false}])
@@ -16,6 +26,10 @@ const Parent = () => {
     ))
     console.log(result)
   }
+
+  useEffect(()=>{
+    localStorage.setItem('todos',JSON.stringify(result))
+  }, [result])
 
   return (
     <div>

@@ -11,7 +11,7 @@ const Modes = () => {
               <p className='badge bg-danger p-3 fs-3 text-start'>Add<br/>Tasks</p>
               </a>
         </div>
-        <div className='task m-3'>
+        <div className='task m-3'  onClick={()=>{navigate('/addnote')}}>
             <a className='link'>
               <p className='badge bg-primary p-3 fs-3 text-start'>Add<br/>Notes</p>
               </a>
