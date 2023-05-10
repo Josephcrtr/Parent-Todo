@@ -17,7 +17,7 @@ const Modes = () => {
               </a>
         </div>
         <div className='container  d-flex '>
-        <div className='task m-3'>
+        <div className='task m-3'onClick={()=>{navigate('/addphoto')}} >
             <a className='link'>
               <p className='badge bg-danger p-3 fs-3 text-start'>Add<br/>Photos</p>
               </a>
@@ -25,6 +25,11 @@ const Modes = () => {
         <div className='task m-3'>
             <a className='link'>
               <p className='badge bg-secondary p-3 fs-3 text-starts'>Add<br/>Other</p>
+              </a>
+        </div>
+       <div className='task m-3' onClick={()=>{navigate('/saved')}}>
+            <a className='link'>
+              <p className='badge bg-warning p-3 fs-3 text-starts'>Saved<br/>Tasks</p>
               </a>
         </div>
     </div>

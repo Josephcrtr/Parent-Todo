@@ -1,10 +1,13 @@
 import React from 'react';
 import del from '../images/delete-svgrepo-com.svg'
+import { useNavigate } from 'react-router-dom';
 
-const List = ({task,result,setResult,handleDelete}) => {
+const List = ({task,result,setResult,handleDelete,saveStorage}) => {
 
+  const navigate = useNavigate()
  
   return (
+    <>
     <div className='list-group sh' >
       <li 
       className='list-group-item h'>{task.msg} 
@@ -14,6 +17,7 @@ const List = ({task,result,setResult,handleDelete}) => {
       </span>
       </li>
     </div>
+    </>
   )
 }
 

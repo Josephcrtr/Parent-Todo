@@ -10,6 +10,8 @@ import Input from "./components/notes/Input";
 import ParentNote from "./components/notes/ParentNote";
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Saved from "./Saved";
+import Cam from "./components/photos/Cam";
 function App() {
   const [notes,setNotes]= useState('')
   const [preview, setPreview]= useState('')
@@ -21,8 +23,9 @@ function App() {
         <Route path="/" element={<Modes/>}/>
         <Route path="/addtask" element={<Parent/>}/>
         <Route path="/addnote" element={<Input notes={notes} setNotes={setNotes} preview={preview} setPreview={setPreview}/>}/>
+        <Route path="/saved" element={<Saved/>}/>
+        <Route path="/addphoto" element={<Cam/>}/> 
         <Route path="*" element={<Badpage/>}/>
-        
       </Routes>
       <Reg/>
       </Router>

@@ -1,0 +1,5 @@
+.hide{
+    appearance: none;
+    display: none;
+    pointer-events: none;
+}

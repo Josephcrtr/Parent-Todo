@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import Task from './form'
 import List from './List'
+import saved from '../../Saved'
+import Saved from '../../Saved'
+import './index.css'
 const Parent = () => {
+
 
     const getStorage=()=>{
       let list = localStorage.getItem('todos')
@@ -11,10 +15,16 @@ const Parent = () => {
         return []
       }
     }
-
   const [task, setTask] = useState('')
   const [result, setResult] = useState(getStorage(),[])
-  
+
+
+    const mappedMsg = (result.map(a=>a.msg))
+    console.log('parent', mappedMsg)
+    useEffect(()=>{
+    localStorage.setItem('saved', JSON.stringify(mappedMsg))
+   },[result])
+
   const addTodo=(todo)=>{
    setResult([...result,{msg:todo,id:Math.floor(Math.random()*10000),isDeleted: false,completed: false}])
   } 
@@ -37,9 +47,11 @@ const Parent = () => {
         {result.map((res,index)=>{
           return(
           <List task={res} key={index} setTask={setTask} result={result} setResult={setResult} addTodo={addTodo}
-          handleDelete={handleDelete}/>
+          handleDelete={handleDelete} />
           )
         })}
+        <saved getStorage={getStorage} />
+        <div className='hide'><Saved result={result}/></div>
     </div>
   )
       }

@@ -1,9 +1,12 @@
 import React from 'react'
 import '../index.css'
-
+import { useNavigate } from 'react-router-dom'
 const Reg = () => {
+  const navigate = useNavigate()
   return (
-    <div className='text-center mt-5'>
+
+
+    <div className='text-center mt-5 mb-5s'>
     <p className='lead'>Want to save your tasks and review later?</p>
     <p className='h5'>Connect..</p>
     <div className="btn-group log">
