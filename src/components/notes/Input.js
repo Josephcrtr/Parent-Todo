@@ -1,7 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
-
+import { useNavigate } from 'react-router-dom'
+import './index.css'
 const Input = ({notes,setNotes, preview,setPreview}) => {
+  const navigate = useNavigate()
+  const goBack =()=>{
+    navigate(-1)
+  }
 
   const handleChange =e=>{
     var value = e.target.value
@@ -20,6 +25,8 @@ const Input = ({notes,setNotes, preview,setPreview}) => {
   console.log('shared')
  }
   return (
+    <>
+    <button onClick={goBack} className='back'>back</button>
     <div className='container d-flex p-5 border border-secondary rounded mt-4'>
         <textarea type='text'
         className='notes'
@@ -43,6 +50,7 @@ const Input = ({notes,setNotes, preview,setPreview}) => {
         />
         </div>
     </div>
+    </>
   )
 }
 

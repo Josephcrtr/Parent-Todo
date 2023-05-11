@@ -1,31 +1,40 @@
 import React from 'react'
-
+import { useState,useEffect,useRef } from 'react'
+import './index.css'
 
 const Cam = () => {
-    const openCam=()=>{
-    const video = document.createElement('video')
-    video.setAttribute('playsinline', '')
-    video.setAttribute('autoplay', '')
-    video.setAttribute('muted', '')
-    video.style.width = '200px'
-    video.style.height= '200px'
 
-    const facingMode = 'user'
-    const constraints = {
-        audio: false,
-        video: {
-            facingMode: facingMode
-        }
+    const videoRef = useRef(null)
+    const photoRef  = useRef(null)
+    const [hasPhoto,setHasphoto]  = useState(false)
+    
+    const getVid=()=>{
+        navigator.mediaDevices.getUserMedia({
+            video:{
+                width: 1920,
+                height: 1080
+            }
+        }).then(stream =>{
+            let video = videoRef.current
+            video.srcObject = stream
+            video.play()
+        })
     }
 
-    navigator.mediaDevices.getUserMedia(constraints).then(function success(stream){
-        video.srcObject = stream
-    })
+    useEffect(()=>{
+        getVid()
+    },[videoRef])
 
-    }
   return (
-    <div>
-        <button onClick={openCam}>open cam</button>
+    <div className='app'>
+    <div className='text-center'>
+        <video ref={videoRef}/>
+        <button className='btn btn-primary rounded-pill b fs-5'>Take photo</button>
+    </div>
+    <div className={'result' + (hasPhoto ? 'hasPhoto': '')}>
+        <canvas ref={photoRef}></canvas>
+        <button className='btn btn-danger rounded-pill b fs-5'>close</button>
+    </div>
     </div>
   )
 }
